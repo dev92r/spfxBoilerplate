@@ -11,7 +11,7 @@ import * as strings from 'SampleWebPartStrings';
 import Sample from './components/Sample';
 
 export interface ISampleWebPartProps {
-  description: string;
+  description: string
 }
 
 export default class SampleWebPart extends BaseClientSideWebPart<ISampleWebPartProps> {
@@ -19,7 +19,10 @@ export default class SampleWebPart extends BaseClientSideWebPart<ISampleWebPartP
 
   public render(): void {
     const element: React.ReactElement = React.createElement(
-      Sample
+      Sample,
+      {
+        context:this.context
+      }
     );
 
     ReactDom.render(element, this.domElement);
